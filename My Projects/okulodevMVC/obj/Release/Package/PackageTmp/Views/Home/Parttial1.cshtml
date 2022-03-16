@@ -1,0 +1,23 @@
+﻿@using okulodevMVC.Models.Siniflar
+@model List<yeni>
+
+
+@foreach (var x in Model)
+{
+
+
+
+
+<div class="col-lg-4 col-md-4 col-sm-6">
+    <a href="portfolio-item.html" class="orta-icerikleri">
+        <div class="orta-icerikler">
+            <h3>Yeni içerik @x.ID</h3>
+            <small class="text-muted">
+                @x.ResimAlt
+            </small>
+        </div>
+        <img class="img-responsive img-home-portfolio" src="@x.ResimYolu" alt="Yeni içerik @x.
+             ">
+    </a>
+</div>
+}

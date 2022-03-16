@@ -1,0 +1,477 @@
+
+/*açılır yan menü*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #818181;
+  display:block;
+ 
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position:absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .9s;
+  
+  height: 100%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/* Fonts */
+@font-face {
+    font-family: 'pacificoregular';
+    src: url('fonts/pacifico/pacifico-webfont.eot');
+    src: url('fonts/pacifico/pacifico-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/pacifico/pacifico-webfont.woff') format('woff'),
+         url('fonts/pacifico/pacifico-webfont.ttf') format('truetype'),
+         url('fonts/pacifico/pacifico-webfont.svg#pacificoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('fonts/opensans/opensans-bold-webfont.eot');
+    src: url('fonts/opensans/opensans-bold-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-bold-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-bold-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src: url('fonts/opensans/opensans-bolditalic-webfont.eot');
+    src: url('fonts/opensans/opensans-bolditalic-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-bolditalic-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-bolditalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('fonts/opensans/opensans-italic-webfont.eot');
+    src: url('fonts/opensans/opensans-italic-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-italic-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-italic-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('fonts/opensans/opensans-light-webfont.eot');
+    src: url('fonts/opensans/opensans-light-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-light-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-light-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src: url('fonts/opensans/opensans-lightitalic-webfont.eot');
+    src: url('fonts/opensans/opensans-lightitalic-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-lightitalic-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-lightitalic-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-lightitalic-webfont.svg#open_sanslight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/opensans/opensans-regular-webfont.eot');
+    src: url('fonts/opensans/opensans-regular-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans/opensans-regular-webfont.woff') format('woff'),
+         url('fonts/opensans/opensans-regular-webfont.ttf') format('truetype'),
+         url('fonts/opensans/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Global stiller */
+
+
+html, body {
+  height:100%;
+  font-family: 'open_sansregular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{
+  padding-top: 50px;
+  color: #666;
+}
+
+
+a {
+  color: #16A085;
+}
+
+a:hover, a:focus {
+  color: #1ABC9C;
+  text-decoration: none;
+}
+
+
+
+h1, h2, h3, .h1, .h2, .h3 {
+  font-family: 'open_sanslight';
+}
+
+h4, h5, h6, .h4, .h5, .h6{
+  font-family: 'open_sansregular';
+}
+
+h2.section-title{
+  margin: 0px;
+  font-size: 25px;
+}
+
+
+.navbar{
+  margin: 0;
+  border: none;
+  border-bottom: 2px solid #16A085;
+  border-radius: 0;
+
+}
+ 
+.navbar-ust {/*üst navbar*/
+  background-color:#2294ad;
+  border-color: #16A085;
+  outline: none;
+}
+
+.navbar-ust .navbar-brand{
+  font-family: 'pacificoregular';
+  font-size: 30px;
+  line-height: 40px;
+  color: #FFF;
+  padding: 0 15px;
+  margin: 8px 0 0px 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-ust, .navbar-nav > li > a {/*navbar yazıları*/
+  
+  color: #fff;
+  padding: 1px 40px;
+  font-family: 'open_sansregular';
+
+}
+
+.navbar-ust .navbar-nav > li > a:hover, .navbar-ust .navbar-nav > li > a:focus {/*navbar yazıları için renk ve arka plan rengi*/
+  
+  color: white;
+  background-color: #16A085;
+}
+
+.navbar-ust .navbar-nav > .open > a, .navbar-ust .navbar-nav > .open > a:hover, .navbar-ust .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #16A085;
+}
+
+.navbar-ust .navbar-nav > .active > a, .navbar-ust .navbar-nav > .active > a:hover, .navbar-ust .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #16A085;
+}
+
+.navbar-ust .navbar-toggle:hover, .navbar-ust .navbar-toggle:focus {
+  background-color: #16A085;
+}
+
+.orta-icerikleri{
+  overflow: hidden;
+  display: block;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.orta-icerikleri img{ /*orta kısım resim sitilleri*/
+  display: block;
+  position:relative;
+  height: 300px;
+  width: 500px;
+}
+
+ .orta-icerikleri .orta-icerikler{
+  background: rgba(0, 0, 0, 0.71);
+  padding: 25px;
+  position:absolute;
+  z-index: 1;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  color: #E9E9E9;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.orta-icerikleri .orta-icerikler h3{
+  font-size: 14px;
+  font-family: 'open_sansbold';
+  margin: 0 0 20px 0;
+}
+
+
+
+.social-networks li a{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.social-networks div.icon-social{
+  width: 30px;
+  text-align: center;
+  color: #FFF;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.social-networks div.icon-social.icon-social-facebook.normal{
+  background: #3B5998;
+}
+
+.social-networks div.icon-social.icon-social-twitter.normal{
+  background: #00CEFD;
+}
+
+.social-networks div.icon-social.icon-social-instagram.normal{
+  background:goldenrod;
+  
+}
+
+.social-networks div.icon-social.hover{/*sosyal medya ikonları hover*/
+  background: red;
+}
+
+/* Buttonlar */
+.btn{
+  border: none;
+  border-radius: 2px;
+  outline: none; 
+}
+
+.btn-lg {
+  padding: 10px 35px;
+}
+
+.btn-primary {
+  color: #FFF;
+  background-color: #1ABC9C;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+  background-color: #16A085;
+}
+
+
+/* Half Page Height Carousel Customization */
+.carousel {
+  height: 580px;
+  background: #34495e;
+} 
+
+.carousel-control.left, .carousel-control.right{/*navbarda bulunan*/
+  background:none;
+  
+}
+
+
+.carousel-control.left i, .carousel-control.right i{
+  position: sticky;
+  top: 250px;
+  font-size: 25px;
+  background: black;
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+
+
+
+
+.carousel-caption .button{/*slider buton stil*/
+  border: 2px solid white;
+  padding: 10px 40px;
+  border-radius: 2px;
+  color:white;
+  font-family: 'open_sansbold';
+  margin: 30px;
+  display: inline-block;
+}
+
+.carousel-caption .button:hover{
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+ .item,
+.active,
+.carousel-inner {
+  height: 100%;
+} 
+.carousel-inner h2{
+  color:white;
+}
+
+.fill {/*slider resimleri için stil*/
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+/* Footer Styles */
+footer {
+  background: #34495E;
+  padding: 50px 0;
+  color: #BDC3C7;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.footer-brand{
+  font-family: 'pacificoregular';
+  display: inline-block;
+  font-size: 30px;
+  line-height: 40px;
+  color: #FFF;
+  margin-bottom: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.footer-brand:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+footer p{
+  color: #BDC3C7;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+footer h3{
+  font-family: 'open_sansbold';
+  margin: 20px 0 15px 0;
+  color: #FFF;
+  font-size: 14px;
+}
+
+footer .form-control{
+  background: #2C3E50;
+  border: none;
+  color: #ecf0f1;
+  font-size: 12px;
+
+}
+
+footer .form-control:focus{
+  background: #ECF0F1;
+  color: #7F8C8D;
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+
+
+.footer-after{
+  background: #2c3e50;
+  padding: 20px;
+  font-size: 12px;
+}
+.footer-after a:hover{
+  color: #7f8c8d;
+  text-decoration: none;
+}
+
+@media (min-width: 1200px){
+  .container {
+    width: 970px;
+  }
+}
+
+/* Small devices Tablets  */
+@media (max-width: 991px) {
+  p.legal{
+    text-align: left;
+  }
+}
+
+
+/* Extra small devices Phones */
+@media (max-width: 767px) {
+
+  .carousel {
+    height: 380px;
+  }
+
+  .carousel-caption {
+    top: 4%;
+  }
+
+  .carousel-control.left i, .carousel-control.right i {
+    top: 170px;
+  }
+  
+
+  h3.error-404{
+    font-size: 150px;
+  } 
+
+}
+
+
+
+/*Uyelik sayfasi*/

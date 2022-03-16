@@ -1,0 +1,25 @@
+﻿@model okulodevMVC.Models.Siniflar.yeni
+
+@{
+    ViewBag.Title = "IcerikGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Içerik Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("IcerikGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control",@readonly="readonly" })
+    <br />
+    @Html.LabelFor(x => x.ResimAlt)
+    @Html.TextBoxFor(x => x.ResimAlt, new {@class = "form-control",@style ="height:200px"})
+    <br />
+    @Html.LabelFor(x => x.ResimYolu)
+    @Html.TextBoxFor(x => x.ResimYolu, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">İçeriği Kaydet</button>
+
+
+}
+

@@ -1,0 +1,209 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KudretHAne</title><!--site başlığı-->
+    <!-- bootstrap hazır dosyaları -->
+    
+    
+    <link rel="stylesheet" href="@Url.Content("~/css/font-awesome.min.css")" type="text/css" />
+
+    
+    <link rel="stylesheet" href="@Url.Content("~/css/bootstrap.css")" type="text/css" />
+
+
+    <!-- css kurulumları -->
+   
+    <link rel="stylesheet" href="@Url.Content("~/css/stilim.css")" type="text/css" />
+    <!-- js kurulumları -->
+
+    <script type="text/javascript" src="@Url.Content("~/js/jquery-1.10.2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/bootstrap.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/plugins.js")"></script>
+
+    @*<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>*@
+
+
+    
+    <script type="text/javascript" src="@Url.Content("~/js/banzhow.js")"></script>
+
+    <!-- yandan açılır menü js kodları -->
+    <script>
+
+        function openNav() {
+            document.getElementById("YanMenu").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("YanMenu").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <body id="main">
+        <!--açılır menünün itekleyeceği içerik (main) -->
+
+
+        <nav class="navbar navbar-fixed-top navbar-ust" role="navigation">
+            <!--üst navbar-->
+            <div id="YanMenu" class="sidenav">
+                <!--açılır yan menü-->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+
+                    &times;
+                </a>
+
+                <a href="#">ANASAYFA</a>
+                <a href="#">YEME-İÇME</a>
+                <a href="#">EN ÇOK OKUNANLAR</a>
+                <a href="#">GEZİ</a>
+                <a href="#">İLETİŞİM</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+
+                &#9776;
+            </span>
+
+
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">@Html.ActionLink(okulodevMVC.Kaynaklar.lang.AnaSayfa, "Index", "Home")</li>
+                    <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.Yemek, "YemeIcme", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">En Çok okunanlar<i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.SonGeziler, "#", "Home") </li>
+                            <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.EnPopüler, "#", "Home") </li>
+                            <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.Seçtiklerim, "#", "Home") </li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Gezi <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.SonGeziler, "#", "Home")</li>
+                            <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.EnPopüler, "#", "Home")</li>
+
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink(okulodevMVC.Kaynaklar.lang.İletişim, "Iletisim", "Home")</li>
+                    <li>@Html.ActionLink("Türkçe", "dilDegistir", "Home", new { lang = "tr", returnurl = this.Request.RawUrl }, null)</li>
+                    <li>@Html.ActionLink("İngilizce", "dilDegistir", "Home", new { lang = "en", returnurl = this.Request.RawUrl }, null)</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            
+        </nav>
+        
+        </div>
+        
+       
+
+            @RenderBody()
+            <hr />
+            <footer>
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <a class="footer-brand" href="index.html"></a>
+                            <p>Bu Web Sayfası Kudret KIRBIYIK tarafından Sakarya Uygulamalı Bilimler Ünivertistesi Bilgisayar Mühendisliği Ders Projesi Kapsamında Oluşturulmuştur.</p>
+                            <ul class="list-inline list-unstyled social-networks">
+                                <!--Normal sınıflar üzerine gelmeden-->
+                                <li>
+                                    <a href="#">
+                                        <div class="icon-social icon-social-facebook normal">
+                                            <i class="fa fa-facebook"></i>
+                                        </div>
+                                        <div class="icon-social hover">
+                                            <i class="fa fa-facebook"></i>
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <div class="icon-social icon-social-twitter normal">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <div class="icon-social hover">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="icon-social icon-social-instagram normal">
+                                            <i class="fa fa-instagram"></i>
+                                        </div>
+                                        <div class="icon-social hover">
+                                            <i class="fa fa-instagram"></i>
+                                        </div>
+
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <h3>İletişim</h3>
+                            <address>
+                                <i class="fa fa-map-marker" style="margin: 0px;"></i> Sakarya Uygulamalı Bilimler Üniversitesi<br>
+                                <i class="fa fa-phone" style="margin: 0px;"></i> (123) 456-7890<br>
+                                <i class="fa fa-envelope" style="margin: 0px;"></i> info@kudrethane.com
+                            </address>
+                        </div>
+
+
+
+                        <div class="col-lg-3 col-md-3">
+                            <h3>Aboelik</h3>
+                            <p>Yeni Bir Blog Hakkında Bildirim Almak İçin Mail Adresi Giriniz</p>
+                            <div class="input-group">
+                                <input type="text" placeholder="Email" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" style="height: 34px ;" type="button">Abone Ol!</button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div>
+                    </div><!-- /.row -->
+
+                </div><!-- /.container -->
+            </footer>
+
+            <div class="footer-after">
+                <div class="container">
+                    <div class="row">
+                        <p class="col-md-10" style="color: #fff; margin: 0px;">©2021 Tüm Hakları Saklıdır.</p>
+                        <p class="col-md-2 legal"><a href="#" rel="nofollow" style=" color: #fff; margin: 0px;  ">KudretHane </a></p>
+                    </div>
+                </div>
+            </div>
+
+       
+      
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,37 @@
+﻿@using okulodevMVC.Models.Siniflar
+@model List<yeni>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İçerikler</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+
+
+<tr>
+    <td>@x.ID</td>
+    <td>@x.ResimAlt</td>
+    <td><a href="/admin/İcerikSil/@x.ID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Admin/IcerikGetir/@x.ID" class="btn btn-warning">Güncelle</a></td>
+    <td><a href="#" class="btn btn-default">Detaylar</a></td>
+
+</tr>
+    }
+
+
+
+</table>
+<a href="/Admin/YeniIcerik/" class="btn btn-primary">Yeni İçerik</a>
+
